@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angka</title>
+    <center> <h1>JAWABAN REMEDIAL JC 9</h1></center>
+
+    <p></p>
+</head>
+<body>
+   
+    <script>
+//  ===================================================== INPUT ANGKA =====================================================
+    var genap = []
+    var ganjil = []
+    var angka3 = []
+    var angkatotal = []
+    
+    do{
+    var angka = prompt("Masukan angka")
+    if(angka%2 == 0){
+            genap.push(angka)
+    }
+    if(angka%2 == 1){
+        ganjil.push(angka)
+    }
+    if(angka ==3){
+        angka3.push(angka)
+    }if(angka >0 || angka <0){
+        angkatotal.push(angka)
+    }
+    }while(angka >0 || angka <0)
+
+//  ===================================================== FUNCTION PRINT ANGKA GANJIL DAN GENAP =====================================================
+    function printData(arr){
+    var hasil = ''
+    for(var i = 0;i<arr.length;i++){
+        hasil += arr[i] + ','
+        }
+        return hasil
+    }
+    
+    var printganjil = printData(ganjil)
+    var printgenap = printData(genap)
+    var printangka = printData(angka)
+
+//  ===================================================== JUMLAH ANGKA PERTAMA DAN TERAKHIR =====================================================
+
+    var jumlahangkapertamadanterakhir = parseInt(angkatotal[0]) + parseInt(angkatotal[angkatotal.length-1])
+
+
+//  ===================================================== TOTAL GENAP =====================================================
+    var totalGenap = 0
+    for(var i=0; i<genap.length; i++){
+        totalGenap += parseInt(genap[i])
+    }
+
+    var rataratagenap = totalGenap/genap.length
+
+//  ===================================================== TOTAL GANJIL =====================================================
+
+    var totalganjil = 0
+    for (var i=0;i<ganjil.length; i++){
+        totalganjil += parseInt(ganjil[i])
+    }
+
+    //  ===================================================== TOTAL angka =====================================================
+    var totalangka = 0
+    for(var i=0; i<angkatotal.length; i++){
+        totalangka += parseInt(angkatotal[i])
+    }
+
+    var ratarataangka = totalangka/angkatotal.length
+
+//  ===================================================== JUMLAH ANGKA 3 =====================================================
+
+var totalangka3 = 0
+    for (var i=0;i<angka3.length; i++){
+        totalangka3 += parseInt(angka3[i])
+    }
+
+    document.getElementsByTagName('p')[0].innerHTML= 'A. Penjumlahan dari angka pertama dan angka terakhir adalah ' + jumlahangkapertamadanterakhir + ' <br><br>B. Jumlah angka genap adalah ' + parseInt(genap.length) + ' dan jumlah  angka ganjil adalah ' + parseInt(ganjil.length)+ '<br><br>C.  Jumlah semua angka yang diinput adalah ' + parseInt(angkatotal.length) +  ' dan total penjumlahan semua angka yang diinput adalah ' + (totalganjil + totalGenap) + '<br><br>D. Quantity angka 3 yang diinput adalah ' +  parseInt(angka3.length) + '<br><br>E. Rata-rata dari semua angka yang diinput ' + ratarataangka
+    
+    </script>
+</body>
+</html>
